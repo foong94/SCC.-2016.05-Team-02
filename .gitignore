@@ -1,0 +1,45 @@
+.classpath
+.project
+.DS_Store
+.settings
+*.orig
+*.class
+*.jar
+*.properties
+report
+target
+appengine-generated
+*.ext
+appengine-web.xml
+chromedriver*
+*.bin
+*.bak
+*.db
+*.md.html
+libs/
+node_modules/
+
+*.launch
+test-output/*
+src/test/current testng.xml
+src/main/webapp/WEB-INF/classes
+*.exe
+
+### Gradle ###
+.gradle
+build/
+bin/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# Cache of project
+.gradletasknamecache
+
+.checkstyle
+.pmd
+.ruleset
