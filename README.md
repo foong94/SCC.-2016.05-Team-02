@@ -1,6 +1,6 @@
 #Software Construction & Configuration
-This is a group project by Team 02 of Software Construction and Configuration in UTAR. We've cloned this project
-from TEAMMATES.
+This is a group project by Team 02 of Software Construction and Configuration in UTAR. We've cloned this project from TEAMMATES.
+This project is only for assignment purpose.
 
 Team members:
 - Lim We Jet
