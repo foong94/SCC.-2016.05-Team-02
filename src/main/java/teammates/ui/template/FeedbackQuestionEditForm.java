@@ -91,8 +91,7 @@ public class FeedbackQuestionEditForm {
         }
         
         return new FeedbackQuestionVisibilitySettings(new ArrayList<String>(), isResponsesVisible,
-                                                      isGiverNameVisible, isRecipientNameVisible,
-                                                      "Please select a visibility option <span class='caret'></span>");
+                                                       isGiverNameVisible, isRecipientNameVisible);
     }
     
     public String getCourseId() {

@@ -19,7 +19,7 @@ chromedriver*
 libs/
 node_modules/
 
-*.launch
+.launches/TM - Start dev server.launch
 test-output/*
 src/test/current testng.xml
 src/main/webapp/WEB-INF/classes

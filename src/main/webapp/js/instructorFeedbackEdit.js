@@ -22,8 +22,6 @@ $(document).ready(function() {
     hideUncommonPanels();
     FeedbackPath.attachEvents();
     hideInvalidRecipientTypeOptionsForAllPreviouslyAddedQuestions();
-    attachVisibilityDropdownEvent();
-    attachVisibilityCheckboxEvent();
 });
 
 function addLoadingIndicator(button, loadingText) {
@@ -45,6 +43,9 @@ function readyFeedbackEditPage() {
     // Disable all questions
     disableAllQuestions();
 
+    // Hide option tables
+    $('.visibilityOptions').hide();
+    
     // Bind submit text links
     $('a[id|=questionsavechangestext]').click(function() {
         var form = $(this).parents('form.form_question');
@@ -113,9 +114,9 @@ function readyFeedbackEditPage() {
 
 function prepareDescription(form) {
     var questionNum = getQuestionNum(form);
-    var content = tinyMCE.get('questiondescription-' + questionNum).getContent();
-    form.find('input[name=questiondescription]').val(content);
-    form.find('input[name=questiondescription-' + questionNum + ']').prop('disabled', true);
+    tinyMCE.get('questiondescription-' + questionNum).save();
+    var descr = form.find('input[name^="questiondescription"]');
+    descr.attr('name', 'questiondescription');
 }
 
 function bindFeedbackSessionEditFormSubmission() {
@@ -330,8 +331,6 @@ function enableQuestion(questionNum) {
     $('#' + FEEDBACK_QUESTION_DISCARDCHANGES + '-' + questionNum).show();
     $('#' + FEEDBACK_QUESTION_EDITTYPE + '-' + questionNum).val('edit');
     $('#button_question_submit-' + questionNum).show();
-
-    showVisibilityCheckboxesIfCustomOptionSelected($currentQuestionTable);
 }
 
 function enableNewQuestion() {
@@ -585,8 +584,9 @@ function showNewQuestionFrame(type) {
     $('#addNewQuestionTable').hide();
     $('#empty_message').hide();
     scrollToElement($('#questionTable-' + NEW_QUESTION)[0], { duration: 1000 });
+    $('#questionTable-' + NEW_QUESTION).find('.visibilityOptions').hide();
 
-    getVisibilityMessage($('#questionTable-' + NEW_QUESTION));
+    getVisibilityMessageIfPreviewIsActive($('#questionTable-' + NEW_QUESTION));
 }
 
 function hideAllNewQuestionForms() {
@@ -741,17 +741,6 @@ function copyOptions() {
     $currTable.each(function(index) {
         $(this).prop('checked', $prevTable.eq(index).prop('checked'));
     });
-
-    // Hide visibility options and update common visibility options dropdown text if a common option is selected
-    var prevQuestionVisibilityOption = $prevQuestionForm.find('.visibility-options-dropdown > button').text();
-    $newQuestionForm.find('.visibility-options-dropdown > button').text(prevQuestionVisibilityOption);
-
-    var isCommonVisibilityOptionSelected = prevQuestionVisibilityOption.trim() !== 'Custom visibility option:';
-    if (isCommonVisibilityOptionSelected) {
-        $newQuestionForm.find('.visibilityOptions').hide();
-    } else {
-        $newQuestionForm.find('.visibilityOptions').show();
-    }
 
     matchVisibilityOptionToFeedbackPath($currGiver);
 }

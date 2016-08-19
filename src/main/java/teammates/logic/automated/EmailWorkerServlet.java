@@ -27,9 +27,6 @@ public class EmailWorkerServlet extends WorkerServlet {
         case FEEDBACK_CLOSING:
             emailObj = new FeedbackSessionClosingMailAction(req);
             break;
-        case FEEDBACK_CLOSED:
-            emailObj = new FeedbackSessionClosedMailAction(req);
-            break;
         case FEEDBACK_OPENING:
             emailObj = new FeedbackSessionOpeningMailAction(req);
             break;

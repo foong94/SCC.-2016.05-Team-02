@@ -466,8 +466,11 @@ public class InstructorFeedbackPageUiTest extends BaseUiTestCase {
         ______TS("Failure case: copy fail since the feedback session name is blank");
         
         feedbackPage.copyFeedbackSession("", newSession.getCourseId());
-        assertTrue(feedbackPage.isElementVisible("copyModalForm"));
-        assertTrue(feedbackPage.isElementHasClass("modalCopiedSessionName", "text-box-error"));
+        feedbackPage.verifyStatus(
+                "\"\" is not acceptable to TEAMMATES as a/an feedback session name because it is empty. "
+                + "The value of a/an feedback session name should be no longer than 38 characters. "
+                + "It should not be empty.");
+        
         
         ______TS("Failure case: copy fail since the feedback session name starts with (");
         feedbackPage = getFeedbackPageForInstructor(idOfInstructorWithSessions);
