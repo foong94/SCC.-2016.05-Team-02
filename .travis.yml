@@ -5,7 +5,7 @@ jdk:
 branches:
   only:
     - master
-    - release
+    - coverity-test
 
 notifications:
   email: false
@@ -13,8 +13,22 @@ notifications:
 sudo: required
 dist: trusty
 
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "F+lDtX94JtvqIrIMskDjTlo5DIMzukkI/4lAlFBgKSOpTGPOf46v1XMFU12EKTCVJ7T6XYX8E5U+Xc6owG3KjEpq5gCWo82u/1TREsxE4CI++El9VKC2ClOYb7Mnsvpgac0yMIFmk+cZ9+ZvJPJmUQyd8r7ixV2V2IXTLz0JOoZbPa+CPYyh7aj+zUTVmEFepvcyU2hcesc4Nj8D0lKnqtQTXgoVi76S47bb+mrMBK/0BMaT70JU+49lpi2enEjDXd3sBDJY8Izjwnm78TM4eYRV+uYnRGky9caEpx5xamkuPS6Z+R7diaMkxrTaUOUZETtyGb1yyueNPqlqGG4qTTQgzQvlKmMEsg5jqXB+P1hAizD1F+2nt0iMD3mKKjeyaDl0MMWMdkJGM1MrWPD1Y0op9eb090PJfLS+c9mRWcRNbBvR0NoOYVIuSmIRgKkzFm/vmrHf8FboTnkJKy+6MrZ+x4JEgtRJ8qautla2OPLyaGGFsiNUfuZMm4waAKU7R84dOPb3xMHpwnrIpZAHM/6rHwcVSvL1I80sULEG962DViKtlHcFGXdp8ViRx8Zz263UPENp0lDgaCNSfetqU3edA9saPJYEZ+1XXKtIi7PDK0m6VTgPikqNiYvwZ7u8X2RPLiixAmhF9FHex2uqh4rwagvhUROuRav1QfCZnoE="
+
 addons:
   firefox: "46.0"
+  coverity_scan:
+    project:
+      name: "sharvinbala/SCC.-2016.05-Team-02"
+      description: "Build submitted via Travis CI"
+    notification_email: sharvinbala@gmail.com
+    build_command_prepend: "mvn clean"
+    build_command:   "mvn -DskipTests=true compile"
+    branch_pattern: coverity_scan
 
 before_install:
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid \
