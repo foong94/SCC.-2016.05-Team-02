@@ -1,5 +1,9 @@
 [![Build Status](https://travis-ci.org/sharvinbala/SCC.-2016.05-Team-02.svg?branch=master)](https://travis-ci.org/sharvinbala/SCC.-2016.05-Team-02)
-#Software Construction & Configuration
+<a href="https://scan.coverity.com/projects/sharvinbala-scc-2016-05-team-02">
+  <img alt="Coverity Scan Build Status"
+       src="https://scan.coverity.com/projects/9965/badge.svg"/>
+</a>
+#Software Construction & Configuration Group Project
 This is a group project by Team 02 of Software Construction and Configuration in UTAR. We've cloned this project from TEAMMATES.
 This project is only for assignment purpose only.
 
