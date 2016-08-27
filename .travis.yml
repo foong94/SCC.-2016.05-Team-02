@@ -5,7 +5,7 @@ jdk:
 branches:
   only:
     - master
-    - coverity-test
+    - static-analysis
 
 notifications:
   email: false
@@ -26,8 +26,8 @@ addons:
       name: "sharvinbala/SCC.-2016.05-Team-02"
       description: "Build submitted via Travis CI"
     notification_email: sharvinbala@gmail.com
-    build_command_prepend: "mvn clean"
-    build_command:   "mvn -DskipTests=true compile"
+    build_command_prepend: "./configure"
+    build_command:   "make"
     branch_pattern: coverity_scan
 
 before_install:
