@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE coverity SYSTEM "config.dtd">
+<coverity>
+
+<metrics>
+    <metric>
+        <name>time</name>
+        <value>11</value>
+    </metric>
+    <metric>
+        <name>args</name>
+        <value>C:\Users\Sharvin\Downloads\cov-analysis-win64-8.5.0.2\bin\cov-build.exe --dir cov-int</value>
+    </metric>
+    <metric>
+        <name>host</name>
+        <value>SHARVIN-PC</value>
+    </metric>
+    <metric>
+        <name>short-platform</name>
+        <value>win64</value>
+    </metric>
+    <metric>
+        <name>platform</name>
+        <value>Windows 7 Home Premium, 64-bit, Service Pack 1 (build 7601)</value>
+    </metric>
+    <metric>
+        <name>ident</name>
+        <value>8.5.0.2 (build e50416d0e6 p-kent-push-26368.934)</value>
+    </metric>
+    <metric>
+        <name>user</name>
+        <value>Sharvin</value>
+    </metric>
+    <metric>
+        <name>cwd</name>
+        <value>C:\Users\Sharvin\dev9\SCC.-2016.05-Team-02</value>
+    </metric>
+    <metric>
+        <name>config</name>
+        <value>C:\Users\Sharvin\Downloads\cov-analysis-win64-8.5.0.2\config\coverity_config.xml</value>
+    </metric>
+    <metric>
+        <name>intermediatedir</name>
+        <value>C:\Users\Sharvin\dev9\SCC.-2016.05-Team-02\cov-int</value>
+    </metric>
+    <metric>
+        <name>outputdir</name>
+        <value>C:\Users\Sharvin\dev9\SCC.-2016.05-Team-02\cov-int\output</value>
+    </metric>
+    <metric>
+        <name>emitdir</name>
+        <value>C:\Users\Sharvin\dev9\SCC.-2016.05-Team-02\cov-int\emit</value>
+    </metric>
+    <metric>
+        <name>force</name>
+        <value>no</value>
+    </metric>
+    <metric>
+        <name>cygwin</name>
+        <value>no</value>
+    </metric>
+    <metric>
+        <name>failures</name>
+        <value>0</value>
+    </metric>
+    <metric>
+        <name>successes</name>
+        <value>0</value>
+    </metric>
+    <metric>
+        <name>recoverable-errors</name>
+        <value>0</value>
+    </metric>
+    <metric>
+        <name>cs-webapps-detected</name>
+        <value>0</value>
+    </metric>
+    <metric>
+        <name>cs-webapp-successes</name>
+        <value>0</value>
+    </metric>
+    <metric>
+        <name>cs-webapp-compilation-secs</name>
+        <value>0</value>
+    </metric>
+    <metric>
+        <name>buildcmd</name>
+        <value>gradlew.bat</value>
+    </metric>
+</metrics>
+</coverity>
